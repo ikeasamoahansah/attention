@@ -27,8 +27,9 @@
 - softmax keeps the values between 0 and 1 (they sum up to 1)
 
 **Multi-Head Attention**:
-$$Multihead(Q, K, V) = Concat(head_{1}\dots.head_{n})W $$
-$$head_{i} = Attention(QW_{i}^{Q}, KW_{i}^{K}, VW_{i}^{V})$$
+- $$Multihead(Q, K, V) = Concat(head_{1}\dots.head_{n})W $$
+- $$head_{i} = Attention(QW_{i}^{Q}, KW_{i}^{K}, VW_{i}^{V})$$
+
 **Layer Normalization**:
 - normalize to make new values in the range 0-1
 - beta and gamma parameters are added
