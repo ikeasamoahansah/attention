@@ -72,3 +72,59 @@ What we expect the model to output:
 - sentence did not change, therefore we do not recalculate the output of the encoder at every time step
 - only the decoder changes
 - this continues till we see the <\EOS> token
+
+
+## Other Notes:
+
+### Dot product
+
+Think of a 2D graph with x and y axes. The dot product is a multiplication of the words in matrix form (matrix multiplication). eg. [2, 3] * [1, 4]-> (2 * 1) + (3 * 4) = 14
+The first one times the transpose of the second one
+
+### Cosine Similarity
+
+points on the graph are traced to the origin and the angle is gotten using the arctan property and the angle is put into the cosine() function to give the value.
+
+### Scaled Dot product
+
+the answer from the dot product divided by the length of the vector. eg. 14/sqrt(2)
+This helps to prevent the exploding gradient problem.
+
+### Normalization
+
+After the word math step, the words should be normalized/scaled down to prevent the use of extremely large numbers. The softmax activation function is used.
+
+$$ \sigma(z)_{i} = \frac{e^{z_{i}}}{\sum {K_{j=1}e^{z_{j}}}} $$
+
+
+### Keys and Queries
+
+Turn the embedding into one that is best for calculating similarities.
+
+### Values
+
+Best embedding for finding the next word.
+Multiplies the embedding from the keys and queries and multiplies it by itself.
+
+Why move words on a different embedding?
+
+The first can give info like:
+- color
+- size
+- high level embeddings
+
+The second one (values) knows when two words could appear in the same context.
+
+### Multi-Head Attention
+
+Many heads are used (n-times). basically the single head attention procedure is done many times.
+
+### Concatenating
+
+if you have an embedding of 3 (2 dimensions) you get 6 dimensions
+
+### Linear step
+
+it transforms the dimensions into lower ones which could actually be used. The best ones are scaled up, the worst are scaled down.
+
+Then an optimal embedding is produced.
