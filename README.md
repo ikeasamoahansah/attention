@@ -78,7 +78,8 @@ What we expect the model to output:
 
 ### Dot product
 
-Think of a 2D graph with x and y axes. The dot product is a multiplication of the words in matrix form (matrix multiplication). eg. [2, 3] * [1, 4]-> (2 * 1) + (3 * 4) = 14
+Think of a 2D graph with x and y axes. The dot product is a multiplication of the words in matrix form (matrix multiplication). 
+eg. [2, 3] * [1, 4]-> (2 * 1) + (3 * 4) = 14
 The first one times the transpose of the second one
 
 ### Cosine Similarity
@@ -94,7 +95,7 @@ This helps to prevent the exploding gradient problem.
 
 After the word math step, the words should be normalized/scaled down to prevent the use of extremely large numbers. The softmax activation function is used.
 
-$$ \sigma(z)_{i} = \frac{e^{z_{i}}}{\sum {K_{j=1}e^{z_{j}}}} $$
+$$ \sigma(z)_{i} = \frac{e^{z_{i}}}{\sum {K_{j=1}e^{z_{j}}}}$$
 
 
 ### Keys and Queries
