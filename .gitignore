@@ -1,2 +1,6 @@
 .venv
 __pycache__/
+runs/
+opus_books_weigths/
+tokenizer_en.json
+tokenizer_it.json
